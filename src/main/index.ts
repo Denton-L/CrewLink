@@ -56,7 +56,7 @@ function createMainWindow() {
 			`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}?version=DEV`
 		);
 	} else {
-		crewlinkVersion = autoUpdater.currentVersion.version;
+		crewlinkVersion = autoUpdater.currentVersion.version.replace(/-linux$/, '');
 		window.loadURL(
 			formatUrl({
 				pathname: joinPath(__dirname, 'index.html'),
